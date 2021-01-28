@@ -1,0 +1,64 @@
+{
+    "products":[
+        {
+            "_id": "movie1",
+            "title": "The Dark Knight",
+            "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice",
+            "price": 189,
+            "genre": "Action",
+            "actorName": "Christian Bale",
+            "year": "2008",
+            "image": "/images/image_1.jpg"
+        },
+        {
+            "_id": "movie2",
+            "title": "Interstellar",
+            "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+            "price": 169,
+            "genre": "Action",
+            "actorName": "Richard Gere",
+            "year": "2014",
+            "image": "/images/image_2.jpg"
+        },
+        {
+            "_id": "movie3",
+            "title": "Amelie",
+            "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice",
+            "price": 159,
+            "genre": "Action",
+            "actorName": "Christian Bale",
+            "year": "2018",
+            "image": "/images/image_3.jpg"
+        },
+        {
+            "_id": "movie4",
+            "title": "Modern Times",
+            "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+            "price": 149,
+            "genre": "Action",
+            "actorName": "Richard Gere",
+            "year": "2012",
+            "image": "/images/image_4.jpg"
+        },
+        {
+            "_id": "movie5",
+            "title": "The Great Dictator",
+            "description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice",
+            "price": 139,
+            "genre": "Action",
+            "actorName": "Christian Bale",
+            "year": "2000",
+            "image": "/images/image_5.jpg"
+        },
+        {
+            "_id": "movie6",
+            "title": "Dr.Stragelove",
+            "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+            "price": 129,
+            "genre": "Action",
+            "actorName": "Richard Gere",
+            "year": "2005",
+            "image": "/images/image_6.jpg"
+        }
+    ]
+}

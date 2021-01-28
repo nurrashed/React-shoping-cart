@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
 html{
   font-size: 62.5%;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+  background-color:#141414; 
 }
 
 body,
@@ -9,9 +12,13 @@ body,
   margin: 0;
 }
 
-body, input, select, textarea{
+body,
+input,
+select,
+button,
+textarea {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .grid-container{
@@ -24,14 +31,17 @@ body, input, select, textarea{
   height: 100%;
 }
 
-a:hover{
+/* a:hover{
   color: #ff8000;
+} */
+
+.font-red{
+  color: #E50914;
 }
 
 header{
   grid-area: header;
-  background-color: #203040;
-  color: #ffffff;
+  background-color: #141414;
   display: flex;
   align-items: center;
   padding: .5rem;
@@ -44,13 +54,108 @@ header a{
 
 main{
   grid-area: main;
+  color: #ffffff;
 }
 
 footer{
   grid-area: footer;
-  background-color: #203040;
-  color: #ffffff;
+  background-color: #141414;
+  color: #E50914;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main{
+  flex: 3 60rem;
+}
+
+.sidebar{
+  flex: 1 20rem;
+}
+
+/* products */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+
+.products li {
+  flex: 0 1 29rem;
+  height: 47rem;
+  padding: 1rem;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.product img {
+  max-width: 37rem;
+  max-height: 37rem;
+}
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-price div,
+.product-price button {
+  text-align: center;
+  flex: 1;
+}
+.product-price div {
+  font-size: 2rem;
+}
+.button {
+  padding: 1rem;
+  border: 0.1rem #464444 solid;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  color: whitesmoke;
+
+}
+.text-weight{
+  font-weight: 700;
+}
+.button:hover {
+  border: 0.1rem #4b4848 solid;
+}
+.button.primary {
+  background-color: #373732;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  font-weight: 500;
+}
+
+.button.primary:hover{
+  background-color: #808080;
+  font-weight: 800;
+  color: #141414;
+}
+
+a{
+  text-decoration: none;
+  color: #E6E6E8;
+}
+.title{
+  color: #E6E6C6;
+}
+.title:hover{
+  color: #808080;
 }
