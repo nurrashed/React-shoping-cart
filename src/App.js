@@ -1,3 +1,4 @@
+//Feature-1
 import React from 'react';
 
 function App() {
@@ -6,6 +7,12 @@ function App() {
       <header>
         <a href="/">React Shopping Cart</a>
       </header>
+      <main>
+        Product List
+      </main>
+      <footer>
+        All right is reserved.
+      </footer>
     </div>
   );
 }
