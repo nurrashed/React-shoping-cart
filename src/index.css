@@ -239,7 +239,7 @@ font-weight: 500;
 }
 
 
-/* Checkout form */
+/* Checkout forvhm */
 form {
   width: 100%;
 }
@@ -258,3 +258,35 @@ input {
   border: 0.1rem #c0c0c0 solid;
 }
 
+/* Product Details*/
+
+.modal-design{
+  background-color: #141414;
+}
+
+.product-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 96vh;
+}
+
+.product-details img{
+  max-height: 80vh;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.product-details-description{
+  flex: 1 1;
+  margin: 1rem;
+  color: whitesmoke;
+  font-weight: 500;
+}
+
+.close-modal{
+  position: absolute;
+  right: 1rem;
+  top: 2.5rem;
+  z-index: 1000;
+}
