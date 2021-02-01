@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import formatCurrency from "../util"; 
-import Fade from 'react-reveal/Fade';
+import formatCurrency from "../util";
+import Fade from "react-reveal/Fade";
 
 export default class Cart extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ export default class Cart extends Component {
     };
     this.props.createOrder(order);
   };
-  
+
   render() {
     const { cartItems } = this.props;
     return (
@@ -41,28 +41,28 @@ export default class Cart extends Component {
         )}
         <div>
           <div className="cart">
-              <Fade left cascade>
-                <ul className="cart-items">
+            <Fade left cascade>
+              <ul className="cart-items">
                 {cartItems.map((item) => (
-                    <li key={item._id}>
+                  <li key={item.id}>
                     <div>
-                        <img src={item.image} alt={item.title}></img>
+                      <img src={item.imageUrl} alt={item.name}></img>
                     </div>
                     <div>
-                        <div>{item.title}</div>
-                        <div className="right">
+                      <div>{item.name}</div>
+                      <div className="right">
                         {formatCurrency(item.price)} x {item.count}{" "}
                         <button
-                            className="button"
-                            onClick={() => this.props.removeFromCart(item)}
+                          className="button"
+                          onClick={() => this.props.removeFromCart(item)}
                         >
-                            Remove
+                          Remove
                         </button>
-                        </div>
+                      </div>
                     </div>
-                    </li>
+                  </li>
                 ))}
-                </ul>
+              </ul>
             </Fade>
           </div>
           {cartItems.length !== 0 && (
@@ -86,47 +86,46 @@ export default class Cart extends Component {
                 </div>
               </div>
               {this.state.showCheckout && (
-                  <Fade right cascade>
-
-                    <div className="cart">
+                <Fade right cascade>
+                  <div className="cart">
                     <form onSubmit={this.createOrder}>
-                        <ul className="form-container">
+                      <ul className="form-container">
                         <li>
-                            <label>Email</label>
-                            <input
+                          <label>Email</label>
+                          <input
                             name="email"
                             type="email"
                             required
                             onChange={this.handleInput}
-                            ></input>
+                          ></input>
                         </li>
                         <li>
-                            <label>Name</label>
-                            <input
+                          <label>Name</label>
+                          <input
                             name="name"
                             type="text"
                             required
                             onChange={this.handleInput}
-                            ></input>
+                          ></input>
                         </li>
                         <li>
-                            <label>Address</label>
-                            <input
+                          <label>Address</label>
+                          <input
                             name="address"
                             type="text"
                             required
                             onChange={this.handleInput}
-                            ></input>
+                          ></input>
                         </li>
                         <li>
-                            <button className="button primary" type="submit">
+                          <button className="button primary" type="submit">
                             Checkout
-                            </button>
+                          </button>
                         </li>
-                        </ul>
+                      </ul>
                     </form>
-                    </div>
-                  </Fade>
+                  </div>
+                </Fade>
               )}
             </div>
           )}
@@ -135,4 +134,3 @@ export default class Cart extends Component {
     );
   }
 }
-
