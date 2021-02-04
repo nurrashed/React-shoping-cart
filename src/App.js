@@ -3,21 +3,21 @@ import { Provider } from "react-redux";
 import Cart from "./components/Cart";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
-import data from "./data.json";
+//import data from "./data.json";
 import store from "./store";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      products: data.products,
+      //products: data.products,
       cartItems: localStorage.getItem("cartItems")
         ? JSON.parse(localStorage.getItem("cartItems"))
         : [],
-      name: data.name,
-      price: data.price,
-      genre: "",
-      sort: "",
+      //name: data.name,
+      //price: data.price,
+      //genre: "",
+      //sort: "",
     };
   }
 
@@ -52,7 +52,7 @@ class App extends React.Component {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
-  sortProducts = (event) => {
+  /* sortProducts = (event) => {
     const sort = event.target.value;
     console.log(event.target.value);
     this.setState((state) => ({
@@ -73,9 +73,9 @@ class App extends React.Component {
             : -1
         ),
     }));
-  };
+  }; */
 
-  filterProducts = (event) => {
+  /* filterProducts = (event) => {
     console.log(event.target.value);
     if (event.target.value === "") {
       this.setState({ genre: event.target.value, products: data.products });
@@ -87,7 +87,7 @@ class App extends React.Component {
         ),
       });
     }
-  };
+  }; */
 
   render() {
     return (
@@ -102,16 +102,8 @@ class App extends React.Component {
           <main>
             <div className="content">
               <div className="main">
-                <Filter
-                  count={this.state.products.length}
-                  genre={this.state.genre}
-                  price={this.state.price}
-                  filterProducts={this.filterProducts}
-                  sortProducts={this.sortProducts}
-                />
-                <Products
-                  products={this.state.products}
-                  addToCart={this.addToCart}
+                <Filter />
+                <Products addToCart={this.addToCart}
                 ></Products>
               </div>
               <div className="sidebar">

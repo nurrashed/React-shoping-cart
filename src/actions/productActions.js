@@ -1,4 +1,5 @@
 import { FETCH_PRODUCTS } from "../types";
+import { FILTER_PRODUCTS_BY_GENRE, ORDER_PRODUCTS_BY_PRICE } from "../types";
 
 export const fetchProducts = () => async (dispatch) => {
   const res = await fetch("/movie");
@@ -9,3 +10,44 @@ export const fetchProducts = () => async (dispatch) => {
     payload: data,
   });
 };
+
+export const filterProducts = (products, genre) => (dispatch) => {
+  dispatch({
+    type: FILTER_PRODUCTS_BY_GENRE,
+    payload: {
+      genre: genre,
+      items:
+        genre === ""
+          ? products
+          : products.filter((x) => x.genre.indexOf(genre) >= 0),
+    },
+  });
+};
+
+export const sortProducts = (filteredProducts, sort) => (dispatch) => {
+  const sortedProducts = filteredProducts.slice();
+  if (sort === "latest") {
+    sortedProducts.sort((a, b) => (a._id > b._id ? 1 : -1));
+  } else {
+    sortedProducts.sort((a, b) =>
+      sort === "lowest"
+        ? a.price > b.price
+          ? 1
+          : -1
+        : a.price > b.price
+        ? -1
+        : 1
+    );
+  }
+  console.log(sortedProducts);
+  dispatch({
+    type: ORDER_PRODUCTS_BY_PRICE,
+    payload: {
+      sort: sort,
+      items: sortedProducts,
+    },
+  });
+};
+
+
+
